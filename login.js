@@ -11,8 +11,8 @@ async function login(event) {
     }
 
     try {
-        // GitHub Pages에서 students.json 파일을 가져오는 fetch 요청
-        const response = await fetch("https://github.com/PullUpjahs/Pullupjahs-alpha/blob/main/students.json");
+        // GitHub의 raw URL을 사용하여 students.json 파일을 가져옵니다.
+        const response = await fetch("https://raw.githubusercontent.com/PullUpjahs/Pullupjahs-alpha/main/students.json");
 
         if (!response.ok) throw new Error("서버 응답 오류");
 
