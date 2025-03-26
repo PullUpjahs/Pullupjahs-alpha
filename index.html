@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pull-Up! 자율동아리 로그인</title>
+    <link rel="stylesheet" href="login.css"> <!-- CSS 파일 연결 -->
+</head>
+<body>
+    <div class="background-wave"></div> <!-- 파도 배경 -->
+
+    <div class="header">
+        <h2>Pull-Up! 자율동아리</h2>
+    </div>
+
+    <h1>로그인</h1>
+
+    <form id="loginForm">
+        <label for="userId">아이디:</label>
+        <input type="text" id="userId" required><br><br>
+
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" required><br><br>
+
+        <button type="submit">로그인</button>
+    </form>
+
+    <div class="login-description">
+        <p>학생 성적을 확인하고 관련 자료를 다운로드할 수 있는 로그인 페이지입니다.</p>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="login.js"></script>
+</body>
+</html>

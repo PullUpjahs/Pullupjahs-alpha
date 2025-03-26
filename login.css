@@ -1,0 +1,140 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    overflow: hidden; /* 배경 파도 효과를 위한 오버플로우 숨기기 */
+}
+
+/* 파도 배경 애니메이션 */
+.background-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 33%; /* 화면의 3분의 1 크기 */
+    background: linear-gradient(to right, rgba(255, 0, 255, 0.1), rgba(0, 0, 255, 0.4)); /* 보라색과 파란색 그라데이션 */
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    z-index: -1; /* 다른 요소들보다 뒤에 배치 */
+    animation: waveAnimation 5s ease-in-out infinite; /* 파도 애니메이션 */
+}
+
+/* 파도 애니메이션 (파도가 왔다갔다 하는 효과) */
+@keyframes waveAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px); /* 파도가 올라가면서 내려오는 효과 */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* 헤더 텍스트 스타일 */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    z-index: 1; /* 헤더가 파도 위에 오도록 */
+}
+
+.header h2 {
+    font-size: 3rem;
+    color: transparent;
+    background: linear-gradient(to right, #9c27b0, #7b1fa2, #4a148c); /* 영롱한 보라색 그라데이션 */
+    -webkit-background-clip: text; /* 텍스트에 그라데이션 효과 적용 */
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 로그인 폼 스타일 */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* 로그인 폼을 감싸는 박스 */
+#loginForm {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* 로그인 버튼 스타일 */
+button {
+    background: linear-gradient(to right, #4CAF50, #8BC34A); /* 초록색 그라데이션 */
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #45a049, #7cba4a); /* 버튼 호버시 그라데이션 */
+}
+
+/* 입력 필드 스타일 */
+input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 마우스가 로그인 박스에 닿았을 때 파도 애니메이션 */
+#loginForm:hover ~ .background-wave {
+    height: 66%; /* 마우스가 닿았을 때 파도 배경을 3분의 2로 확장 */
+}
+
+/* 결과 박스 애니메이션 스타일 */
+#result {
+    width: 300px;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgba(0, 255, 0, 0.2); /* 약간 불투명한 초록색 */
+    border: 1px solid #4CAF50;
+    display: none; /* 처음엔 안 보이도록 */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.5s forwards; /* 애니메이션 추가 */
+}
+
+/* 애니메이션 정의: 결과 박스가 밑에서 위로 올라오는 애니메이션 */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 로그인 설명 텍스트 스타일 */
+.login-description {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #555;
+}
